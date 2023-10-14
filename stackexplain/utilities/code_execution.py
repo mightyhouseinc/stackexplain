@@ -87,7 +87,7 @@ def execute_code(args, language):
     errors = ''.join(errors)
 
     # File doesn't exist, for java, command[1] is a class name instead of a file
-    if "java" != command[0] and not os.path.isfile(command[1]):
+    if command[0] != "java" and not os.path.isfile(command[1]):
         return None
 
     return get_error_message(errors, language)
